@@ -53,11 +53,7 @@
             --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: var(--font-body);
@@ -101,8 +97,7 @@
         /* --- PAGE TRANSITION DRONE --- */
         #drone-transition {
             position: fixed;
-            top: 50%;
-            left: -200px;
+            top: 50%; left: -200px;
             transform: translateY(-50%);
             z-index: 99999;
             pointer-events: none;
@@ -121,12 +116,8 @@
 
         /* --- NAVIGATION --- */
         header {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 1.5rem 5%;
-            transition: var(--transition-slow);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            padding: 1.5rem 5%; transition: var(--transition-slow);
         }
         header.scrolled {
             padding: 1rem 5%;
@@ -135,407 +126,240 @@
             border-bottom: 1px solid var(--glass-border);
         }
         .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1400px; margin: 0 auto;
         }
         .logo {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800;
+            color: var(--text-primary); text-decoration: none;
+            letter-spacing: 0.1em; text-transform: uppercase;
         }
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
         .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-            position: relative;
+            color: var(--text-secondary); text-decoration: none;
+            font-weight: 600; font-size: 0.95rem; text-transform: uppercase;
+            letter-spacing: 1px; transition: color 0.3s; position: relative;
         }
         .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--accent-glow);
-            transition: width 0.3s ease;
-            box-shadow: 0 0 10px var(--accent-glow);
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -5px; left: 0; background-color: var(--accent-glow);
+            transition: width 0.3s ease; box-shadow: 0 0 10px var(--accent-glow);
         }
         .nav-links a:hover { color: var(--text-primary); }
         .nav-links a:hover::after { width: 100%; }
         
         .hamburger {
-            display: none;
-            cursor: pointer;
-            background: none;
-            border: none;
-            z-index: 1001;
+            display: none; cursor: pointer; background: none; border: none; z-index: 1001;
         }
         .hamburger svg { width: 35px; height: 35px; fill: var(--text-primary); }
 
         /* --- FLOATING SOCIALS --- */
         .social-sidebar {
-            position: fixed;
-            right: 2%;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            z-index: 900;
+            position: fixed; right: 2%; top: 50%; transform: translateY(-50%);
+            display: flex; flex-direction: column; gap: 1rem; z-index: 900;
         }
         .social-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 50px; height: 50px; border-radius: 12px;
+            display: flex; justify-content: center; align-items: center;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid var(--glass-border);
-            text-decoration: none;
+            border: 1px solid var(--glass-border); text-decoration: none;
         }
         .social-icon svg { width: 22px; height: 22px; fill: var(--text-primary); transition: 0.3s; }
         .social-icon:hover {
-            transform: scale(1.15) translateX(-5px);
-            border-color: var(--accent-glow);
+            transform: scale(1.15) translateX(-5px); border-color: var(--accent-glow);
             box-shadow: 0 0 20px rgba(43, 196, 216, 0.3);
         }
         .social-icon:hover svg { fill: var(--accent-glow); }
 
         /* --- HERO SECTION --- */
         #home {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding: 0 5%;
+            height: 100vh; display: flex; align-items: center; position: relative; padding: 0 5%;
         }
         .hero-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(to right, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.4) 100%), 
                         url('https://images.unsplash.com/photo-1508614589041-895b88991e3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80') center/cover fixed;
             z-index: -1;
         }
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
+        .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
         .hero-subtitle {
-            font-family: var(--font-heading);
-            color: var(--accent-glow);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            display: block;
+            font-family: var(--font-heading); color: var(--accent-glow);
+            letter-spacing: 4px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 1rem; display: block;
         }
         .hero-title {
-            font-family: var(--font-heading);
-            font-size: clamp(3rem, 6vw, 5.5rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
+            font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 5.5rem);
+            line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800;
         }
         .hero-desc {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-inline: auto;
+            font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem;
+            max-width: 600px; margin-inline: auto;
         }
         
         .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 1rem 2.5rem;
-            background: transparent;
-            border: 2px solid var(--accent-glow);
-            border-radius: 50px;
-            color: var(--text-primary);
-            font-family: var(--font-heading);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
+            display: inline-flex; align-items: center; gap: 10px; padding: 1rem 2.5rem;
+            background: transparent; border: 2px solid var(--accent-glow); border-radius: 50px;
+            color: var(--text-primary); font-family: var(--font-heading); font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+            transition: all 0.3s; position: relative; overflow: hidden;
             box-shadow: 0 0 15px rgba(43, 196, 216, 0.2);
         }
         .btn-primary:hover {
-            background: var(--accent-glow);
-            color: var(--bg-deep);
-            box-shadow: 0 0 30px rgba(43, 196, 216, 0.6);
-            transform: translateY(-3px);
+            background: var(--accent-glow); color: var(--bg-deep);
+            box-shadow: 0 0 30px rgba(43, 196, 216, 0.6); transform: translateY(-3px);
         }
 
         /* --- ABOUT / FEATURE SECTION --- */
-        #about {
-            padding: 100px 5%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIvPjwvc3ZnPg==');
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
+        section { padding: 100px 5%; position: relative; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
         .section-title {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
+            font-family: var(--font-heading); font-size: 3rem; font-weight: 800; margin-bottom: 1rem;
         }
+        .section-desc { color: var(--text-secondary); max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
 
         .about-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem; max-width: 1400px; margin: 0 auto;
         }
-        
         .feature-card {
-            padding: 2.5rem 2rem;
-            text-align: center;
-            border-top: 3px solid var(--accent-glow);
-            transition: var(--transition-slow);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            padding: 2.5rem 2rem; text-align: center; border-top: 3px solid var(--accent-glow);
+            transition: var(--transition-slow); display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
         }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(43, 196, 216, 0.15);
-        }
-        
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(43, 196, 216, 0.15); }
         .feature-card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            color: var(--accent-glow);
-            margin-bottom: 1rem;
-            letter-spacing: 0.5px;
+            font-family: var(--font-heading); font-size: 1.5rem; color: var(--accent-glow); margin-bottom: 1rem;
         }
-        
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
+        .feature-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
 
         /* --- SERVICES SECTION --- */
-        #services {
-            padding: 100px 5%;
-            position: relative;
-        }
-        
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem; max-width: 1400px; margin: 0 auto;
         }
-        
         .service-card {
-            padding: 2.5rem 2rem;
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition-slow);
-            position: relative;
-            overflow: hidden;
+            padding: 2.5rem 2rem; display: flex; flex-direction: column;
+            transition: var(--transition-slow); position: relative; overflow: hidden;
         }
         .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(circle at top right, rgba(43, 196, 216, 0.1), transparent 50%);
-            opacity: 0;
-            transition: var(--transition-slow);
+            opacity: 0; transition: var(--transition-slow);
         }
         .service-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(43, 196, 216, 0.5);
+            transform: translateY(-10px); border-color: rgba(43, 196, 216, 0.5);
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
         .service-card:hover::before { opacity: 1; }
+        .service-card.highlight { border-color: var(--accent-glow); box-shadow: 0 0 20px rgba(43, 196, 216, 0.15); }
         
-        .service-card.highlight {
-            border-color: var(--accent-glow);
-            box-shadow: 0 0 20px rgba(43, 196, 216, 0.15);
-        }
-
-        .service-title {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
+        .service-title { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
         .service-badge {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--accent-glow);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
-            padding: 4px 10px;
-            background: rgba(43, 196, 216, 0.1);
-            border-radius: 4px;
+            display: inline-block; font-size: 0.75rem; font-weight: 600; color: var(--accent-glow);
+            text-transform: uppercase; margin-bottom: 1.5rem; padding: 4px 10px;
+            background: rgba(43, 196, 216, 0.1); border-radius: 4px;
         }
-        
-        .service-features {
-            list-style: none;
-            flex-grow: 1;
-            margin: 1.5rem 0 2.5rem 0;
-        }
+        .service-features { list-style: none; flex-grow: 1; margin: 1.5rem 0 2.5rem 0; }
         .service-features li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.8rem;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
+            position: relative; padding-left: 1.5rem; margin-bottom: 0.8rem; color: var(--text-secondary); font-size: 0.95rem;
         }
-        .service-features li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--accent-glow);
-        }
-
+        .service-features li::before { content: '▹'; position: absolute; left: 0; color: var(--accent-glow); }
+        
         .btn-book {
-            width: 100%;
-            text-align: center;
-            padding: 1rem;
-            border: 1px solid var(--glass-border);
-            border-radius: 8px;
-            background: rgba(255,255,255,0.03);
-            color: var(--text-primary);
-            text-decoration: none;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            cursor: pointer;
+            width: 100%; text-align: center; padding: 1rem; border: 1px solid var(--glass-border);
+            border-radius: 8px; background: rgba(255,255,255,0.03); color: var(--text-primary);
+            text-decoration: none; font-family: var(--font-heading); font-weight: 600;
+            text-transform: uppercase; transition: all 0.3s; cursor: pointer;
         }
-        .btn-book:hover {
-            background: var(--accent-glow);
-            color: var(--bg-deep);
-            border-color: var(--accent-glow);
-        }
+        .btn-book:hover { background: var(--accent-glow); color: var(--bg-deep); border-color: var(--accent-glow); }
 
         /* --- PORTFOLIO SECTION --- */
-        #portfolio {
-            padding: 100px 5%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIvPjwvc3ZnPg==');
-        }
-
         .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem; max-width: 1400px; margin: 0 auto;
         }
-
         .portfolio-item {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--glass-border);
-            background: var(--bg-surface);
-            transition: var(--transition-slow);
-            height: 550px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative; border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border);
+            background: var(--bg-surface); transition: var(--transition-slow); height: 550px;
         }
-        
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-glow);
-            box-shadow: 0 10px 30px rgba(43, 196, 216, 0.15);
-        }
+        .portfolio-item:hover { transform: translateY(-10px); border-color: var(--accent-glow); box-shadow: 0 10px 30px rgba(43, 196, 216, 0.15); }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .portfolio-item:hover img { transform: scale(1.08); }
+        .portfolio-item iframe { width: 100%; height: 100%; border: none; background: #fff; }
 
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        /* --- TECHNICAL STATS BANNER --- */
+        .stats-banner {
+            display: flex; flex-wrap: wrap; justify-content: space-around; gap: 2rem;
+            padding: 3rem; margin: 2rem auto; max-width: 1200px;
+            background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(43,196,216,0.05));
+            border-left: 4px solid var(--accent-glow);
         }
+        .stat-item { text-align: center; flex: 1; min-width: 200px; }
+        .stat-item h4 { font-family: var(--font-heading); font-size: 1.2rem; color: var(--accent-glow); margin-bottom: 0.5rem; text-transform: uppercase; }
+        .stat-item p { color: var(--text-secondary); font-size: 0.9rem; }
 
-        .portfolio-item:hover img {
-            transform: scale(1.08);
+        /* --- FAQ SECTION --- */
+        .faq-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem; max-width: 1200px; margin: 0 auto;
         }
+        .faq-item {
+            border: 1px solid var(--glass-border); border-radius: 8px; padding: 1.5rem;
+            background: rgba(255,255,255,0.02); cursor: pointer; transition: all 0.3s;
+        }
+        .faq-item:hover { border-color: rgba(43, 196, 216, 0.3); }
+        .faq-question {
+            font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--accent-glow); transition: 0.3s; }
+        .faq-item.active .faq-question::after { content: '−'; transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; color: var(--text-secondary); font-size: 0.95rem; margin-top: 0;
+        }
+        .faq-item.active .faq-answer { max-height: 200px; margin-top: 1rem; }
 
-        /* Ensures Instagram embeds stretch properly without ugly borders */
-        .portfolio-item iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            background: #fff; /* IG background matching */
+        /* --- CONTACT FORM --- */
+        .contact-container {
+            max-width: 800px; margin: 0 auto; padding: 3rem; text-align: left;
         }
+        .form-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+        }
+        .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .input-group.full-width { grid-column: 1 / -1; }
+        .form-control {
+            background: rgba(0,0,0,0.5); border: 1px solid var(--glass-border); padding: 1rem;
+            border-radius: 8px; color: #fff; font-family: var(--font-body); width: 100%; transition: 0.3s;
+        }
+        .form-control:focus { outline: none; border-color: var(--accent-glow); box-shadow: 0 0 10px rgba(43, 196, 216, 0.2); }
+        select.form-control { appearance: none; background-image: url('data:image/svg+xml;utf8,<svg fill="%232bc4d8" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); background-repeat: no-repeat; background-position-x: 98%; background-position-y: 50%; }
 
         /* --- FOOTER --- */
         footer {
-            border-top: 1px solid var(--glass-border);
-            padding: 3rem 5%;
-            text-align: center;
-            color: var(--text-secondary);
+            border-top: 1px solid var(--glass-border); padding: 3rem 5%; text-align: center; color: var(--text-secondary);
         }
+        .seo-locations { font-size: 0.8rem; margin-top: 1rem; opacity: 0.6; }
 
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
             .hamburger { display: block; }
             .nav-links {
-                position: fixed;
-                top: 0; right: -100%;
-                width: 70%; height: 100vh;
-                background: rgba(5, 5, 5, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                border-left: 1px solid var(--glass-border);
+                position: fixed; top: 0; right: -100%; width: 70%; height: 100vh;
+                background: rgba(5, 5, 5, 0.98); backdrop-filter: blur(20px);
+                flex-direction: column; justify-content: center; align-items: center;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); border-left: 1px solid var(--glass-border);
             }
             .nav-links.active { right: 0; }
-            
             .hero-title { font-size: 2.5rem; }
-            
             .social-sidebar {
-                bottom: 20px; top: auto; right: 50%;
-                transform: translateX(50%);
-                flex-direction: row;
-                background: var(--bg-surface);
-                backdrop-filter: blur(10px);
-                padding: 10px 20px;
-                border-radius: 50px;
-                border: 1px solid var(--glass-border);
+                bottom: 20px; top: auto; right: 50%; transform: translateX(50%);
+                flex-direction: row; background: var(--bg-surface); backdrop-filter: blur(10px);
+                padding: 10px 20px; border-radius: 50px; border: 1px solid var(--glass-border);
             }
             .social-icon { width: 40px; height: 40px; }
             .portfolio-item { height: 450px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -560,13 +384,14 @@
                 <li><a href="#about" class="nav-item">About</a></li>
                 <li><a href="#services" class="nav-item">Services</a></li>
                 <li><a href="#portfolio" class="nav-item">Portfolio</a></li>
+                <li><a href="#faq" class="nav-item">FAQ</a></li>
             </ul>
         </div>
     </header>
 
     <!-- Floating Social Bar -->
     <div class="social-sidebar glass-panel">
-        <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20a%20drone%20or%20photography%20session%20to%20capture%20some%20incredible%20moments.%20Let's%20make%20it%20happen!%20%E2%9C%A8" target="_blank" class="social-icon" aria-label="WhatsApp">
+        <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20a%20drone%20or%20photography%20session...%20Let's%20make%20it%20happen!%20%E2%9C%A8" target="_blank" class="social-icon" aria-label="WhatsApp">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
         </a>
         <a href="https://www.instagram.com/provisuals7?igsh=emQ2dWI5dHhiejFy&utm_source=qr" target="_blank" class="social-icon" aria-label="Instagram">
@@ -584,36 +409,26 @@
             <span class="hero-subtitle">The Sky Is Not The Limit</span>
             <h1 class="hero-title">Elevate Your <br><span class="gradient-text">Perspective</span></h1>
             <p class="hero-desc">We deliver world-class drone videography, cinematic photography, and complete event broadcasting to capture your most incredible moments.</p>
-            <a href="#services" class="btn-primary nav-item">
-                Explore Services 
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+            <a href="#services" class="btn-primary nav-item">Explore Services</a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" style="background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIvPjwvc3ZnPg==');">
         <div class="section-header reveal">
             <h2 class="section-title">Redefining Visuals in <span class="accent-text">Pune</span></h2>
-            <p style="color: var(--text-secondary); max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
-                From high-end real estate aerial surveys to capturing the magic of your wedding day, we bring a cinematic approach to every frame. Explore our core capabilities below.
-            </p>
+            <p class="section-desc">From high-end real estate aerial surveys to capturing the magic of your wedding day, we bring a cinematic approach to every frame.</p>
         </div>
         
         <div class="about-cards-grid">
-            <!-- Aerial Photography & Videography -->
             <div class="feature-card glass-panel reveal">
                 <h3>Aerial Photography & Videography</h3>
                 <p>High-resolution, stunning aerial stills and cinematic footage to capture the perfect angle for your subject.</p>
             </div>
-            
-            <!-- Broadcasting & Live Stream -->
             <div class="feature-card glass-panel reveal" style="transition-delay: 0.1s;">
                 <h3>Broadcasting & Live Stream</h3>
                 <p>Professional live streams and event broadcasting solutions to share your moments in real-time.</p>
             </div>
-            
-            <!-- Drone Rent with Operator -->
             <div class="feature-card glass-panel reveal" style="transition-delay: 0.2s;">
                 <h3>Drone Rent with Operator</h3>
                 <p>Need specialized gear? We offer professional drone rentals complete with an experienced operator.</p>
@@ -625,17 +440,15 @@
     <section id="services">
         <div class="section-header reveal">
             <h2 class="section-title">Our <span class="accent-text">Services</span></h2>
-            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Select a package below to reveal pricing and secure your booking via WhatsApp.</p>
+            <p class="section-desc">Select a package below to reveal pricing and secure your booking via WhatsApp.</p>
         </div>
         
         <div class="services-grid">
-            
-            <!-- Aerial Survey -->
             <div class="service-card glass-panel reveal">
                 <div>
                     <h3 class="service-title">AERIAL SURVEY</h3>
                     <span class="service-badge">PREMIUM</span>
-                    <p style="font-weight: 600; color: #fff;">Location: Pune</p>
+                    <p style="font-weight: 600;">Location: Pune</p>
                     <ul class="service-features">
                         <li>Unlimited Digital Photos for Selection</li>
                         <li>10 Final Retouched Photos (Digital Copies)</li>
@@ -643,15 +456,14 @@
                         <li>Duration upto 1 hour</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20the%20Aerial%20Survey%20package.%20Please%20reveal%20the%20price!" class="btn-book">Reveal Price &rarr;</a>
+                <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%20I'd%20love%20to%20book%20the%20Aerial%20Survey%20package." class="btn-book">Reveal Price &rarr;</a>
             </div>
 
-            <!-- Real Estate -->
             <div class="service-card glass-panel reveal" style="transition-delay: 0.1s;">
                 <div>
                     <h3 class="service-title">REAL ESTATE</h3>
                     <span class="service-badge">MOST AFFORDABLE</span>
-                    <p style="font-weight: 600; color: #fff;">Location: Pune</p>
+                    <p style="font-weight: 600;">Location: Pune</p>
                     <ul class="service-features">
                         <li>Unlimited Digital Photos for Selection</li>
                         <li>10 Final Retouched Photos (Digital Copies)</li>
@@ -659,81 +471,75 @@
                         <li>Duration 2 hours</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20the%20Real%20Estate%20package.%20Please%20reveal%20the%20price!" class="btn-book">Reveal Price &rarr;</a>
+                <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%20I'd%20love%20to%20book%20the%20Real%20Estate%20package." class="btn-book">Reveal Price &rarr;</a>
             </div>
 
-            <!-- Whole Day -->
             <div class="service-card glass-panel highlight reveal" style="transition-delay: 0.2s;">
                 <div>
                     <h3 class="service-title">WHOLE DAY</h3>
                     <span class="service-badge">ALL IN ONE PLAN</span>
-                    <p style="font-weight: 600; color: #fff;">Location: Pune</p>
+                    <p style="font-weight: 600;">Location: Pune</p>
                     <ul class="service-features">
                         <li>Unlimited Digital Photos for Selection</li>
                         <li>All raw video footage</li>
                         <li>Duration upto 8 hours</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20the%20Whole%20Day%20package.%20Please%20reveal%20the%20price!" class="btn-book" style="background: rgba(43, 196, 216, 0.1); border-color: var(--accent-glow);">Reveal Price &rarr;</a>
+                <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%20I'd%20love%20to%20book%20the%20Whole%20Day%20package." class="btn-book" style="background: rgba(43, 196, 216, 0.1); border-color: var(--accent-glow);">Reveal Price &rarr;</a>
             </div>
 
-            <!-- Pre-Wedding -->
             <div class="service-card glass-panel reveal">
                 <div>
                     <h3 class="service-title">PRE-WEDDING</h3>
                     <span class="service-badge">HOT SELLING</span>
-                    <p style="font-weight: 600; color: #fff;">Location: Pune</p>
+                    <p style="font-weight: 600;">Location: Pune</p>
                     <ul class="service-features">
                         <li>Unlimited Digital Photos for Selection</li>
                         <li>All raw video footage</li>
                         <li>Duration upto 4 hours</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20the%20Pre-Wedding%20package.%20Please%20reveal%20the%20price!" class="btn-book">Reveal Price &rarr;</a>
+                <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%20I'd%20love%20to%20book%20the%20Pre-Wedding%20package." class="btn-book">Reveal Price &rarr;</a>
             </div>
 
-            <!-- Wedding -->
             <div class="service-card glass-panel reveal" style="transition-delay: 0.1s;">
                 <div>
                     <h3 class="service-title">WEDDING</h3>
                     <span class="service-badge">GET MOST OF IT</span>
-                    <p style="font-weight: 600; color: #fff;">Location: Pune</p>
+                    <p style="font-weight: 600;">Location: Pune</p>
                     <ul class="service-features">
                         <li>Unlimited Digital Photos for Selection</li>
                         <li>All raw video footage</li>
                         <li>Duration upto 4 hours</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20the%20Wedding%20package.%20Please%20reveal%20the%20price!" class="btn-book">Reveal Price &rarr;</a>
+                <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%20I'd%20love%20to%20book%20the%20Wedding%20package." class="btn-book">Reveal Price &rarr;</a>
             </div>
 
-            <!-- Live Streaming & Podcast -->
             <div class="service-card glass-panel reveal" style="transition-delay: 0.2s;">
                 <div>
                     <h3 class="service-title" style="font-size: 1.3rem;">LIVE STREAMING & PODCAST</h3>
                     <span class="service-badge">FOR CORPORATE EVENTS</span>
-                    <p style="font-weight: 600; color: #fff;">Location: Pune</p>
+                    <p style="font-weight: 600;">Location: Pune</p>
                     <ul class="service-features">
                         <li>Recording & Editing</li>
                         <li>All raw video footage</li>
                         <li>Duration upto 8 hours</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20the%20Live%20Streaming%20package.%20Please%20reveal%20the%20price!" class="btn-book">Reveal Price &rarr;</a>
+                <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%20I'd%20love%20to%20book%20the%20Live%20Streaming%20package." class="btn-book">Reveal Price &rarr;</a>
             </div>
-
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio">
+    <section id="portfolio" style="background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIvPjwvc3ZnPg==');">
         <div class="section-header reveal">
             <h2 class="section-title">Our <span class="accent-text">Portfolio</span></h2>
-            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">A glimpse into our cinematic aerial photography and videography works.</p>
+            <p class="section-desc">A glimpse into our cinematic aerial photography and videography works.</p>
         </div>
 
         <div class="portfolio-grid">
-            <!-- Instagram Reels Embeds -->
             <div class="portfolio-item glass-panel reveal">
                 <iframe src="https://www.instagram.com/reel/DYwvKROsFEE/embed" title="Instagram Reel 1" scrolling="no" allowtransparency="true"></iframe>
             </div>
@@ -743,8 +549,6 @@
             <div class="portfolio-item glass-panel reveal" style="transition-delay: 0.2s;">
                 <iframe src="https://www.instagram.com/reel/DYyq-1DMuTZ/embed" title="Instagram Reel 3" scrolling="no" allowtransparency="true"></iframe>
             </div>
-
-            <!-- Pinterest Images -->
             <div class="portfolio-item glass-panel reveal">
                 <img src="https://i.pinimg.com/736x/ac/d1/52/acd152d2765a698c4d8371bcd3c21ca1.jpg" alt="Aerial photography portfolio shot 1">
             </div>
@@ -757,65 +561,145 @@
         </div>
     </section>
 
+    <!-- Technical Facts Banner -->
+    <div class="stats-banner glass-panel reveal">
+        <div class="stat-item">
+            <h4>Gears</h4>
+            <p>4K Cinematic Drones, Workstation Laptops for Live Edit</p>
+        </div>
+        <div class="stat-item">
+            <h4>Assignments</h4>
+            <p>Corporate Events, Weddings, Aerial Survey, Live Broadcasts</p>
+        </div>
+        <div class="stat-item">
+            <h4>Locations</h4>
+            <p>Pune, Across Maharashtra & Outstation</p>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="section-header reveal">
+            <h2 class="section-title">Frequently Asked <span class="accent-text">Questions</span></h2>
+            <p class="section-desc">Got questions? We've got answers.</p>
+        </div>
+        
+        <div class="faq-grid">
+            <div class="faq-item reveal">
+                <div class="faq-question">How can drone photography benefit my real estate listing?</div>
+                <div class="faq-answer">In a competitive market, an aerial view is a game changer. Drone photography provides a unique perspective that ground-level shots simply can't match. It allows potential buyers to see the entire property layout, the neighborhood, and proximity to landmarks.</div>
+            </div>
+            <div class="faq-item reveal" style="transition-delay: 0.1s;">
+                <div class="faq-question">Do you provide drone services for weddings?</div>
+                <div class="faq-answer">Absolutely! Nothing adds "cinematic scale" to a wedding film like a sweeping aerial shot of the venue. Our wedding packages are designed to give your love story a grand, movie-like feel.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">What happens to the raw footage after the shoot?</div>
+                <div class="faq-answer">Unlike many others, we believe the data belongs to you. In most of our packages, we provide all raw video footage alongside the final edited files, giving you the freedom to use the clips for different social media edits.</div>
+            </div>
+            <div class="faq-item reveal" style="transition-delay: 0.1s;">
+                <div class="faq-question">Is it legal to fly drones at my location?</div>
+                <div class="faq-answer">Safety and legality are our top priorities. We stay updated on local regulations. While we handle the technical side, we do require permission from the property owner. For certain restricted zones, we may need to check feasibility beforehand.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" style="background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIvPjwvc3ZnPg==');">
+        <div class="contact-container glass-panel reveal">
+            <h2 class="section-title" style="font-size: 2rem; text-align: center;">Book Your <span class="accent-text">Session</span></h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">Fill the form below or directly connect via WhatsApp.</p>
+            
+            <form action="#" method="POST" class="form-grid">
+                <div class="input-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" class="form-control" required>
+                </div>
+                <div class="input-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" class="form-control">
+                </div>
+                <div class="input-group full-width">
+                    <label for="whatsappNum">WhatsApp Number *</label>
+                    <input type="tel" id="whatsappNum" class="form-control" required>
+                </div>
+                <div class="input-group full-width">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="input-group full-width">
+                    <label for="shootType">Shoot Type *</label>
+                    <select id="shootType" class="form-control" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="aerial-survey">Aerial Survey</option>
+                        <option value="real-estate">Real Estate</option>
+                        <option value="wedding">Wedding / Pre-Wedding</option>
+                        <option value="live-streaming">Live Streaming & Podcast</option>
+                        <option value="other">Other Events</option>
+                    </select>
+                </div>
+                <div class="input-group full-width" style="margin-top: 1rem;">
+                    <button type="submit" class="btn-book" style="background: var(--accent-glow); color: #000;">Submit Inquiry</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <h2 style="font-family: var(--font-heading); margin-bottom: 10px; color: #fff;">Pro<span class="accent-text">Visuals</span></h2>
         <p>&copy; 2026 Pro Visuals. All rights reserved.</p>
+        <div class="seo-locations">
+            <strong>Photography & Videography Services in:</strong> Pune • Mumbai • Maharashtra • Outstation (On Demand)
+        </div>
     </footer>
 
     <!-- Interactive Scripts -->
     <script>
-        // 1. Sticky Header & Glassmorphism Scroll Effect
+        // Sticky Header
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
         });
 
-        // 2. Mobile Hamburger Menu
+        // Mobile Menu
         const hamburger = document.getElementById('hamburger-btn');
         const navLinks = document.getElementById('nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+        hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
 
-        // 3. Cinematic Drone Page Transition
+        // Drone Transition
         const navItems = document.querySelectorAll('.nav-item');
         const drone = document.getElementById('drone-transition');
-
         navItems.forEach(item => {
             item.addEventListener('click', function(e) {
-                // Close menu on mobile
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                }
-                // Trigger Drone
+                if (navLinks.classList.contains('active')) navLinks.classList.remove('active');
                 drone.classList.remove('fly-animation');
-                void drone.offsetWidth; // trigger reflow
+                void drone.offsetWidth;
                 drone.classList.add('fly-animation');
             });
         });
 
-        // 4. Scroll Reveal Animations (Intersection Observer)
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(faq => faq.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Scroll Reveal
         const revealElements = document.querySelectorAll('.reveal');
-        
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Reveal only once
+                    observer.unobserve(entry.target);
                 }
             });
-        }, {
-            root: null,
-            threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
-        });
-
+        }, { root: null, threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
         revealElements.forEach(el => revealObserver.observe(el));
     </script>
 </body>
