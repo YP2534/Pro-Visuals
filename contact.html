@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us & FAQ | Pro Visuals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIvPjwvc3ZnPg==');">
+    <div id="drone-transition"><svg width="120" height="120" viewBox="0 0 24 24" fill="var(--accent-glow)" xmlns="http://www.w3.org/2000/svg"><path d="M21 9V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V9M21 9V11C21 12.1046 20.1046 13 19 13H5C3.89543 13 3 12.1046 3 11V9M21 9H16.5M3 9H7.5M16.5 9L15 17H9L7.5 9M16.5 9H7.5M12 5V2M12 2L14 4M12 2L10 4"/></svg></div>
+    
+    <header id="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo nav-item">Pro<span class="accent-text">Visuals</span></a>
+            <button class="hamburger" id="hamburger-btn" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Us</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="portfolio.html" class="nav-item">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-item active-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <!-- Web3Forms Contact Form -->
+            <div class="contact-container glass-panel reveal" style="margin-bottom: 5rem;">
+                <h2 class="section-title" style="font-size: 2rem; text-align: center;">Book Your <span class="accent-text">Session</span></h2>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">Fill the form below or directly connect via WhatsApp.</p>
+                
+                <form action="https://api.web3forms.com/submit" method="POST" class="form-grid">
+                    <input type="hidden" name="access_key" value="2a65a028-5ef4-4630-8a77-85c9bc37e6f1">
+                    <input type="hidden" name="subject" value="New Inquiry for Pro Visuals Drone & Photography!">
+                    <input type="checkbox" name="botcheck" style="display: none;">
+
+                    <div class="input-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="First Name" class="form-control" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="Last Name" class="form-control">
+                    </div>
+                    <div class="input-group full-width">
+                        <label for="whatsappNum">WhatsApp Number *</label>
+                        <input type="tel" id="whatsappNum" name="WhatsApp Number" class="form-control" required>
+                    </div>
+                    <div class="input-group full-width">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="Email" class="form-control" required>
+                    </div>
+                    <div class="input-group full-width">
+                        <label for="shootType">Shoot Type *</label>
+                        <select id="shootType" name="Shoot Type" class="form-control" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="Aerial Survey">Aerial Survey</option>
+                            <option value="Real Estate">Real Estate</option>
+                            <option value="Wedding / Pre-Wedding">Wedding / Pre-Wedding</option>
+                            <option value="Live Streaming & Podcast">Live Streaming & Podcast</option>
+                            <option value="Other Events">Other Events</option>
+                        </select>
+                    </div>
+                    <div class="input-group full-width" style="margin-top: 1rem;">
+                        <button type="submit" class="btn-book" style="background: var(--accent-glow); color: #000;">Submit Inquiry</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="section-header reveal">
+                <h2 class="section-title">Frequently Asked <span class="accent-text">Questions</span></h2>
+                <p class="section-desc">Got questions? We've got answers.</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <div class="faq-question">How can drone photography benefit my real estate listing?</div>
+                    <div class="faq-answer">In a competitive market, an aerial view is a game changer. Drone photography provides a unique perspective that ground-level shots simply can't match.</div>
+                </div>
+                <div class="faq-item reveal" style="transition-delay: 0.1s;">
+                    <div class="faq-question">Do you provide drone services for weddings?</div>
+                    <div class="faq-answer">Absolutely! Nothing adds "cinematic scale" to a wedding film like a sweeping aerial shot of the venue.</div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">What happens to the raw footage after the shoot?</div>
+                    <div class="faq-answer">Unlike many others, we believe the data belongs to you. We provide all raw video footage alongside the final edited files.</div>
+                </div>
+                <div class="faq-item reveal" style="transition-delay: 0.1s;">
+                    <div class="faq-question">Is it legal to fly drones at my location?</div>
+                    <div class="faq-answer">Safety and legality are our top priorities. We stay updated on local regulations and handle the technical side.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h2 style="font-family: var(--font-heading); margin-bottom: 10px; color: #fff;">Pro<span class="accent-text">Visuals</span></h2>
+        <p>&copy; 2026 Pro Visuals. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
