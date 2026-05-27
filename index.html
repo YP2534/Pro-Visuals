@@ -7,7 +7,7 @@
     
     <!-- Advanced SEO Meta Tags -->
     <meta name="description" content="Pro Visuals is Pune's premier agency for cinematic drone videography, aerial photography, 4K video editing, and complete event broadcasting. Book your shoot today.">
-    <meta name="keywords" content="Pro Visuals, drone photography Pune, cinematic videography, aerial survey, real estate drone, pre-wedding shoot, wedding videography, live streaming, event broadcasting, 4K video editing">
+    <meta name="keywords" content="Pro Visuals, drone photography Pune, cinematic videography, aerial survey, real estate drone, pre-wedding shoot, wedding videography, live streaming, event broadcasting, drone rent with operator">
     <meta name="author" content="Pro Visuals">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Pro Visuals | Cinematic Drone Photography">
@@ -26,7 +26,7 @@
       "@type": "LocalBusiness",
       "name": "Pro Visuals",
       "image": "https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
-      "description": "Professional drone photography, cinematic 4K videography, and complete event broadcasting.",
+      "description": "Professional drone photography, cinematic videography, and complete event broadcasting.",
       "telephone": "+917709444575",
       "address": {
         "@type": "PostalAddress",
@@ -288,39 +288,10 @@
             transform: translateY(-3px);
         }
 
-        /* --- ABOUT / WHY US SECTION --- */
+        /* --- ABOUT / FEATURE SECTION --- */
         #about {
             padding: 100px 5%;
             background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIvPjwvc3ZnPg==');
-        }
-        .about-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        .about-text h2 {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .stat-box {
-            padding: 1.5rem;
-            border-left: 3px solid var(--accent-glow);
-        }
-
-        /* --- SERVICES SECTION --- */
-        #services {
-            padding: 100px 5%;
-            position: relative;
         }
         .section-header {
             text-align: center;
@@ -331,6 +302,50 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
+        }
+
+        .about-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--accent-glow);
+            transition: var(--transition-slow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(43, 196, 216, 0.15);
+        }
+        
+        .feature-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--accent-glow);
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- SERVICES SECTION --- */
+        #services {
+            padding: 100px 5%;
+            position: relative;
         }
         
         .services-grid {
@@ -392,7 +407,7 @@
         .service-features {
             list-style: none;
             flex-grow: 1;
-            margin: 1.5rem 0;
+            margin: 1.5rem 0 2.5rem 0;
         }
         .service-features li {
             position: relative;
@@ -407,15 +422,6 @@
             left: 0;
             color: var(--accent-glow);
         }
-        
-        .service-addons {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--glass-border);
-        }
-        .service-addons strong { color: var(--text-primary); display: block; margin-bottom: 4px; }
 
         .btn-book {
             width: 100%;
@@ -448,9 +454,6 @@
         }
 
         /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 1024px) {
-            .about-grid { grid-template-columns: 1fr; }
-        }
         @media (max-width: 768px) {
             .hamburger { display: block; }
             .nav-links {
@@ -536,25 +539,30 @@
 
     <!-- About Section -->
     <section id="about">
-        <div class="about-grid">
-            <div class="about-text reveal">
-                <h2>Redefining Visuals in <span class="accent-text">Pune</span></h2>
-                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.1rem;">
-                    From high-end real estate aerial surveys to capturing the magic of your wedding day, we bring a cinematic approach to every frame. Equipped for 4K video editing and seamless live streaming, we ensure your story is told with absolute clarity.
-                </p>
-                <div class="stats-grid">
-                    <div class="stat-box glass-panel">
-                        <h3 class="accent-text" style="font-size: 1.8rem;">4K</h3>
-                        <p>Cinematic Editing</p>
-                    </div>
-                    <div class="stat-box glass-panel">
-                        <h3 class="accent-text" style="font-size: 1.8rem;">Live</h3>
-                        <p>Event Broadcasting</p>
-                    </div>
-                </div>
+        <div class="section-header reveal">
+            <h2 class="section-title">Redefining Visuals in <span class="accent-text">Pune</span></h2>
+            <p style="color: var(--text-secondary); max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+                From high-end real estate aerial surveys to capturing the magic of your wedding day, we bring a cinematic approach to every frame. Explore our core capabilities below.
+            </p>
+        </div>
+        
+        <div class="about-cards-grid">
+            <!-- Aerial Photography & Videography -->
+            <div class="feature-card glass-panel reveal">
+                <h3>Aerial Photography & Videography</h3>
+                <p>High-resolution, stunning aerial stills and cinematic footage to capture the perfect angle for your subject.</p>
             </div>
-            <div class="reveal" style="transition-delay: 0.2s;">
-                <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Drone operator at work" style="width: 100%; border-radius: 16px; border: 1px solid var(--glass-border); box-shadow: 0 20px 40px rgba(0,0,0,0.6);">
+            
+            <!-- Broadcasting & Live Stream -->
+            <div class="feature-card glass-panel reveal" style="transition-delay: 0.1s;">
+                <h3>Broadcasting & Live Stream</h3>
+                <p>Professional live streams and event broadcasting solutions to share your moments in real-time.</p>
+            </div>
+            
+            <!-- Drone Rent with Operator -->
+            <div class="feature-card glass-panel reveal" style="transition-delay: 0.2s;">
+                <h3>Drone Rent with Operator</h3>
+                <p>Need specialized gear? We offer professional drone rentals complete with an experienced operator.</p>
             </div>
         </div>
     </section>
@@ -580,10 +588,6 @@
                         <li>All raw video footage</li>
                         <li>Duration upto 1 hour</li>
                     </ul>
-                    <div class="service-addons">
-                        <strong>Add On Services:</strong>
-                        Additional hours @ 500/- each
-                    </div>
                 </div>
                 <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20the%20Aerial%20Survey%20package.%20Please%20reveal%20the%20price!" class="btn-book">Reveal Price &rarr;</a>
             </div>
@@ -600,10 +604,6 @@
                         <li>All raw video footage, 1 final video</li>
                         <li>Duration 2 hours</li>
                     </ul>
-                    <div class="service-addons">
-                        <strong>Add On Services:</strong>
-                        Additional hours @ 500/- each
-                    </div>
                 </div>
                 <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20the%20Real%20Estate%20package.%20Please%20reveal%20the%20price!" class="btn-book">Reveal Price &rarr;</a>
             </div>
@@ -619,10 +619,6 @@
                         <li>All raw video footage</li>
                         <li>Duration upto 8 hours</li>
                     </ul>
-                    <div class="service-addons">
-                        <strong>Add On Services:</strong>
-                        Additional hours @ 500/- each
-                    </div>
                 </div>
                 <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20the%20Whole%20Day%20package.%20Please%20reveal%20the%20price!" class="btn-book" style="background: rgba(43, 196, 216, 0.1); border-color: var(--accent-glow);">Reveal Price &rarr;</a>
             </div>
@@ -638,10 +634,6 @@
                         <li>All raw video footage</li>
                         <li>Duration upto 4 hours</li>
                     </ul>
-                    <div class="service-addons">
-                        <strong>Add On Services:</strong>
-                        Additional hours @ 500/- each
-                    </div>
                 </div>
                 <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20the%20Pre-Wedding%20package.%20Please%20reveal%20the%20price!" class="btn-book">Reveal Price &rarr;</a>
             </div>
@@ -657,10 +649,6 @@
                         <li>All raw video footage</li>
                         <li>Duration upto 4 hours</li>
                     </ul>
-                    <div class="service-addons">
-                        <strong>Add On Services:</strong>
-                        Additional hours @ 500/- each
-                    </div>
                 </div>
                 <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20the%20Wedding%20package.%20Please%20reveal%20the%20price!" class="btn-book">Reveal Price &rarr;</a>
             </div>
@@ -676,10 +664,6 @@
                         <li>All raw video footage</li>
                         <li>Duration upto 8 hours</li>
                     </ul>
-                    <div class="service-addons">
-                        <strong>Add On Services:</strong>
-                        Additional hours @ 1500/- each
-                    </div>
                 </div>
                 <a href="https://wa.me/917709444575?text=Hi%20Pro%20Visuals!%20%F0%9F%9A%81%F0%9F%93%B8%20I'd%20love%20to%20book%20the%20Live%20Streaming%20package.%20Please%20reveal%20the%20price!" class="btn-book">Reveal Price &rarr;</a>
             </div>
