@@ -36,4 +36,8 @@
         <loc>https://provisuals.in/video-editing</loc>
         <priority>0.80</priority>
     </url>
+    <url>
+        <loc>https://provisuals.in/graphic-designing</loc>
+        <priority>0.80</priority>
+    </url>
 </urlset>
