@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://provisuals.in/</loc>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://provisuals.in/index.html</loc>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://provisuals.in/web-development.html</loc>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://provisuals.in/pre-wedding.html</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://provisuals.in/wedding.html</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://provisuals.in/live-streaming.html</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://provisuals.in/aerial-survey.html</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://provisuals.in/real-estate.html</loc>
+        <priority>0.80</priority>
+    </url>
+</urlset>
