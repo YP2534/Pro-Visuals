@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Video Editing | Pro Visuals</title>
+    
+    <meta name="description" content="Transform your raw footage into cinematic masterpieces with Pro Visuals' professional video editing, color grading, and sound design services.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- DESIGN SYSTEM & VARIABLES (Inherited from Main Page) --- */
+        :root {
+            --bg-deep: #050505;
+            --bg-surface: rgba(20, 20, 20, 0.7);
+            --accent-glow: #2bc4d8;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; line-height: 1.6; }
+
+        .glass-panel { background: var(--bg-surface); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); border-radius: 16px; }
+        .gradient-text { background: linear-gradient(135deg, #fff 0%, var(--text-secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .accent-text { color: var(--accent-glow); text-shadow: 0 0 20px rgba(43, 196, 216, 0.4); }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- NAVIGATION --- */
+        header { position: fixed; width: 100%; top: 0; z-index: 1000; padding: 1.5rem 5%; transition: var(--transition-slow); }
+        header.scrolled { padding: 1rem 5%; background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
+        .logo { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--text-primary); text-decoration: none; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: color 0.3s; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--accent-glow); transition: width 0.3s ease; box-shadow: 0 0 10px var(--accent-glow); }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .hamburger { display: none; cursor: pointer; background: none; border: none; z-index: 1001; }
+        .hamburger svg { width: 35px; height: 35px; fill: var(--text-primary); }
+
+        /* --- PAGE HEADER --- */
+        .page-header { height: 60vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 0 5%; text-align: center; margin-top: 50px; }
+        .page-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(5,5,5,0.7) 0%, rgba(5,5,5,1) 100%), url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80') center/cover fixed; z-index: -1; }
+        .page-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 1rem; font-weight: 800; }
+        .page-desc { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin-inline: auto; }
+
+        /* --- CONTENT SECTION --- */
+        .content-section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .service-card { padding: 2.5rem 2rem; display: flex; flex-direction: column; transition: var(--transition-slow); position: relative; overflow: hidden; }
+        .service-card:hover { transform: translateY(-10px); border-color: rgba(43, 196, 216, 0.5); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .service-card.highlight { border-color: var(--accent-glow); box-shadow: 0 0 20px rgba(43, 196, 216, 0.15); }
+        
+        .service-title { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .service-badge { display: inline-block; font-size: 0.75rem; font-weight: 600; color: var(--accent-glow); text-transform: uppercase; margin-bottom: 1.5rem; padding: 4px 10px; background: rgba(43, 196, 216, 0.1); border-radius: 4px; }
+        
+        .service-features { list-style: none; flex-grow: 1; margin: 1.5rem 0 2.5rem 0; }
+        .service-features li { position: relative; padding-left: 1.5rem; margin-bottom: 0.8rem; color: var(--text-secondary); font-size: 0.95rem; }
+        .service-features li::before { content: '▹'; position: absolute; left: 0; color: var(--accent-glow); }
+
+        .btn-book { width: 100%; text-align: center; padding: 1rem; border: 1px solid var(--glass-border); border-radius: 8px; background: rgba(255,255,255,0.03); color: var(--text-primary); text-decoration: none; font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; transition: all 0.3s; cursor: pointer; display: inline-block; margin-top: auto;}
+        .btn-book:hover { background: var(--accent-glow); color: var(--bg-deep); border-color: var(--accent-glow); }
+
+        /* --- FOOTER --- */
+        footer { border-top: 1px solid var(--glass-border); padding: 3rem 5%; text-align: center; color: var(--text-secondary); margin-top: 50px;}
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 70%; height: 100vh; background: rgba(5, 5, 5, 0.98); backdrop-filter: blur(20px); flex-direction: column; justify-content: center; align-items: center; transition: right 0.4s; border-left: 1px solid var(--glass-border); }
+            .nav-links.active { right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Pro<span class="accent-text">Visuals</span></a>
+            <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+                <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services" class="active">Services</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="page-header reveal active">
+        <div class="page-bg"></div>
+        <div>
+            <h1 class="page-title">Video <span class="gradient-text">Editing</span></h1>
+            <p class="page-desc">Transforming your raw footage into captivating stories. From high-energy reels to elegant cinematic wedding films.</p>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="services-grid">
+            
+            <!-- Reels & Shorts -->
+            <div class="service-card glass-panel reveal">
+                <div>
+                    <h3 class="service-title">SOCIAL MEDIA EDITS</h3>
+                    <span class="service-badge">REELS & SHORTS</span>
+                    <p style="font-weight: 600; color: #fff;">Fast-paced, engaging content.</p>
+                    <ul class="service-features">
+                        <li>Dynamic Cuts & Transitions</li>
+                        <li>Trending Audio Synchronization</li>
+                        <li>Animated Captions & Subtitles</li>
+                        <li>Color Correction</li>
+                        <li>Delivered in 9:16 Vertical Format</li>
+                    </ul>
+                </div>
+                <a href="index.html#contact" class="btn-book">Book Now &rarr;</a>
+            </div>
+
+            <!-- Corporate & Podcasts -->
+            <div class="service-card glass-panel reveal highlight" style="transition-delay: 0.1s;">
+                <div>
+                    <h3 class="service-title">PODCASTS & CORPORATE</h3>
+                    <span class="service-badge">PROFESSIONAL GRADE</span>
+                    <p style="font-weight: 600; color: #fff;">Clean, polished, and on-brand.</p>
+                    <ul class="service-features">
+                        <li>Multi-cam Synchronization</li>
+                        <li>Audio Enhancement & Noise Reduction</li>
+                        <li>Lower Thirds & Branding Elements</li>
+                        <li>B-Roll Integration</li>
+                        <li>Export in 4K / 1080p Web-ready formats</li>
+                    </ul>
+                </div>
+                <a href="index.html#contact" class="btn-book">Book Now &rarr;</a>
+            </div>
+
+            <!-- Cinematic / Weddings -->
+            <div class="service-card glass-panel reveal" style="transition-delay: 0.2s;">
+                <div>
+                    <h3 class="service-title">CINEMATIC FILMS</h3>
+                    <span class="service-badge">WEDDINGS & EVENTS</span>
+                    <p style="font-weight: 600; color: #fff;">Story-driven masterpiece edits.</p>
+                    <ul class="service-features">
+                        <li>Advanced Cinematic Color Grading</li>
+                        <li>Storytelling & Scripted Flow</li>
+                        <li>Premium Sound Design & Mixing</li>
+                        <li>Motion Graphics & Titles</li>
+                        <li>Teaser + Full-Length Feature Delivery</li>
+                    </ul>
+                </div>
+                <a href="index.html#contact" class="btn-book">Book Now &rarr;</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <h2 style="font-family: var(--font-heading); margin-bottom: 10px; color: #fff;">Pro<span class="accent-text">Visuals</span></h2>
+        <p>&copy; 2026 Pro Visuals. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Sticky Header
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+
+        // Mobile Menu
+        const hamburger = document.getElementById('hamburger-btn');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { root: null, threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
