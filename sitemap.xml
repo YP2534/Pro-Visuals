@@ -5,31 +5,31 @@
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://provisuals.in/index.html</loc>
+        <loc>https://provisuals.in/index</loc>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://provisuals.in/web-development.html</loc>
+        <loc>https://provisuals.in/web-development</loc>
         <priority>0.90</priority>
     </url>
     <url>
-        <loc>https://provisuals.in/pre-wedding.html</loc>
+        <loc>https://provisuals.in/pre-wedding</loc>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://provisuals.in/wedding.html</loc>
+        <loc>https://provisuals.in/wedding</loc>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://provisuals.in/live-streaming.html</loc>
+        <loc>https://provisuals.in/live-streaming</loc>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://provisuals.in/aerial-survey.html</loc>
+        <loc>https://provisuals.in/aerial-survey</loc>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://provisuals.in/real-estate.html</loc>
+        <loc>https://provisuals.in/real-estate</loc>
         <priority>0.80</priority>
     </url>
 </urlset>
