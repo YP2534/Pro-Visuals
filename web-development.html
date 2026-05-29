@@ -4,153 +4,239 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Web Development Services | Pro Visuals</title>
-<meta name="description" content="Get professional custom websites and E-commerce stores with our complete web development packages. We provide all types of web solutions, and dedicated website care plans.">
-<meta name="keywords" content="web development, e-commerce websites, website care plan, website with domain and hosting, custom web design">
-    <link rel="stylesheet" href="style.css"> 
+    <meta name="description" content="Get professional custom websites and E-commerce stores with our complete web development packages.">
     <style>
-        /* Modern Premium CSS */
+        /* Modern Cinematic CSS */
         :root {
             --primary-color: #f39c12; /* Golden/Orange highlight */
-            --bg-dark: #0a0a0a;
-            --bg-card: #1a1a1a;
-            --text-light: #f4f4f4;
-            --text-muted: #aaaaaa;
+            --primary-glow: rgba(243, 156, 18, 0.4);
+            --bg-deep: #050505;
+            --bg-panel: rgba(20, 20, 20, 0.8);
+            --border-color: rgba(255, 255, 255, 0.05);
+            --text-light: #ffffff;
+            --text-muted: #a0a0a0;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-dark);
+            background-color: var(--bg-deep);
             color: var(--text-light);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Hero Section */
         .web-hero {
             position: relative;
-            background: linear-gradient(to right, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.6)), url('your-tech-bg-image.jpg');
+            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.7), var(--bg-deep)), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            height: 60vh;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .web-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
+            font-size: 4rem;
+            margin-bottom: 15px;
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            animation: floatIn 1.5s ease-out;
         }
 
-        .web-hero h1 span {
-            color: var(--primary-color);
+        /* Gradient Text Effect */
+        .gradient-text {
+            background: linear-gradient(45deg, #f39c12, #f1c40f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 30px var(--primary-glow);
         }
 
         .web-hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 750px;
+            animation: floatIn 2s ease-out;
         }
 
         /* Features Section */
         .dev-services {
-            padding: 80px 5%;
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: #fff;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
         }
 
+        /* Glassmorphism Cinematic Cards */
         .feature-card {
-            background-color: var(--bg-card);
-            padding: 40px 30px;
-            border-radius: 12px;
-            border-top: 4px solid transparent;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            text-align: left;
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            border-top: 4px solid var(--primary-color);
-            background-color: #222;
+            transform: translateY(-12px);
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 20px var(--primary-glow);
         }
 
-        .feature-card h3 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
+        .card-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .feature-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, var(--bg-panel), transparent);
+        }
+
+        .card-content {
+            padding: 30px;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            font-size: 1.6rem;
+            color: #fff;
+            margin-top: 0;
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .feature-card p {
+        .card-content h3::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .card-content p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
-        /* Care Plan Highlight Section */
+        /* Care Plan Split Banner */
         .care-plan-banner {
-            background: linear-gradient(135deg, #111, #1a1a1a);
-            border: 1px solid #333;
-            margin: 60px 5%;
-            padding: 50px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(20,20,20,0.9), rgba(10,10,10,0.9)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            border: 1px solid var(--border-color);
+            margin: 80px 5%;
+            padding: 70px 50px;
+            border-radius: 20px;
             text-align: center;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
         }
 
         .care-plan-banner h2 {
-            color: #fff;
+            font-size: 2.5rem;
             margin-bottom: 20px;
         }
 
         .care-plan-banner p {
-            color: var(--text-muted);
+            color: #cccccc;
             max-width: 800px;
-            margin: 0 auto 30px auto;
-            font-size: 1.1rem;
+            margin: 0 auto 40px auto;
+            font-size: 1.2rem;
         }
 
         /* Call to Action */
         .cta-btn {
-            background-color: var(--primary-color);
+            background: linear-gradient(45deg, var(--primary-color), #d68910);
             color: #000;
-            padding: 15px 40px;
+            padding: 16px 45px;
             text-decoration: none;
             font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 30px;
-            transition: 0.3s;
+            font-weight: 700;
+            border-radius: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
             display: inline-block;
+            border: none;
+            cursor: pointer;
         }
 
         .cta-btn:hover {
-            background-color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px var(--primary-glow);
             color: #000;
-            box-shadow: 0 0 20px rgba(243, 156, 18, 0.5);
         }
 
+        /* Animations */
+        @keyframes floatIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .web-hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2.2rem; }
+            .care-plan-banner { padding: 40px 20px; }
+        }
     </style>
 </head>
 <body>
 
     <header class="web-hero">
-        <h1>Transform Your <span>Digital Presence</span></h1>
+        <h1>Transform Your <span class="gradient-text">Digital Presence</span></h1>
         <p>From stunning business portfolios to powerful E-Commerce platforms. We build websites that load fast, look cinematic, and convert visitors into clients.</p>
     </header>
 
@@ -159,27 +245,42 @@
         <div class="features-grid">
             
             <div class="feature-card">
-                <h3>E-Commerce & Portfolios</h3>
-                <p>We design all types of websites. Whether you need a secure E-Commerce store with payment gateways or a sleek portfolio to showcase your work, we deliver perfection.</p>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="E-Commerce Interface">
+                </div>
+                <div class="card-content">
+                    <h3>E-Commerce & Portfolios</h3>
+                    <p>We design all types of websites. Whether you need a secure E-Commerce store with payment gateways or a sleek portfolio to showcase your work, we deliver perfection.</p>
+                </div>
             </div>
 
             <div class="feature-card">
-                <h3>Domain & Hosting Included</h3>
-                <p>No hidden setup fees or technical headaches. Every web project includes a premium domain name and high-speed, secure cloud hosting right out of the box.</p>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Cloud Hosting Servers">
+                </div>
+                <div class="card-content">
+                    <h3>Domain & Hosting Included</h3>
+                    <p>No hidden setup fees or technical headaches. Every web project includes a premium domain name and high-speed, secure cloud hosting right out of the box.</p>
+                </div>
             </div>
 
             <div class="feature-card">
-                <h3>Mobile Responsive & SEO</h3>
-                <p>Your website will look flawless on every smartphone, tablet, and desktop. Plus, we build with basic SEO structures to get you noticed on Google faster.</p>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=600&q=80" alt="Mobile Responsive Design">
+                </div>
+                <div class="card-content">
+                    <h3>Mobile Responsive & SEO</h3>
+                    <p>Your website will look flawless on every smartphone, tablet, and desktop. Plus, we build with basic SEO structures to get you noticed on Google faster.</p>
+                </div>
             </div>
 
         </div>
     </section>
 
     <section class="care-plan-banner">
-        <h2>Exclusive Website Care Plan</h2>
+        <h2>Exclusive <span class="gradient-text">Website Care Plan</span></h2>
         <p>A website is an investment that needs maintenance. With our Post-Launch Care Plan, we handle all the technical updates, daily backups, security monitoring, and content changes so you can focus entirely on running your business.</p>
-        <a href="index.html#contact" class="cta-btn">Start Your Web Project</a>
+        <a href="#contact" class="cta-btn">Start Your Web Project</a>
     </section>
 
 </body>
