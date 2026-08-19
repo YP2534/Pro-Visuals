@@ -20,21 +20,18 @@ const drone = document.getElementById('drone-transition');
 
 navItems.forEach(item => {
     item.addEventListener('click', function(e) {
-        e.preventDefault(); // Stop instant redirect
+        e.preventDefault(); 
         const targetUrl = this.href;
         
-        // Close menu on mobile
         if (navLinks.classList.contains('active')) navLinks.classList.remove('active');
         
-        // Trigger Drone Animation
         drone.classList.remove('fly-animation');
-        void drone.offsetWidth; // Reflow
+        void drone.offsetWidth; 
         drone.classList.add('fly-animation');
         
-        // Wait for drone to fly across screen before loading new page
         setTimeout(() => {
             window.location.href = targetUrl;
-        }, 800); // 0.8 seconds
+        }, 800); 
     });
 });
 
@@ -55,39 +52,33 @@ const faqItems = document.querySelectorAll('.faq-item');
 faqItems.forEach(item => {
     item.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
+        faqItems.forEach(faq => faq.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+    });
+});
 
 // 6. Interactive 3D Card Tilt Effect
 const cards = document.querySelectorAll('.service-card, .portfolio-item');
 
 cards.forEach(card => {
-    // When mouse moves over the card, calculate the 3D tilt
     card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
         
-        // Find exact mouse position inside the card
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         
-        // Find the center of the card
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         
-        // Calculate rotation based on distance from center (Max 15 degrees)
         const rotateX = ((y - centerY) / centerY) * -15; 
         const rotateY = ((x - centerX) / centerX) * 15;
         
-        // Apply the 3D transform instantly
         card.style.transition = 'none';
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
     });
 
-    // When mouse leaves, snap back to flat 2D smoothly
     card.addEventListener('mouseleave', () => {
         card.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
         card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-    });
-});
-        faqItems.forEach(faq => faq.classList.remove('active'));
-        if (!isActive) item.classList.add('active');
     });
 });
