@@ -27,7 +27,7 @@ main { flex-grow: 1; }
     position: fixed; 
     top: 50%; 
     left: -200px; 
-    transform-style: preserve-3d; /* Enables 3D space */
+    transform-style: preserve-3d; 
     z-index: 99999; 
     pointer-events: none; 
     opacity: 0; 
@@ -40,46 +40,9 @@ main { flex-grow: 1; }
 }
 
 @keyframes cinematicFly3D { 
-    0% { 
-        left: -20vw; 
-        transform: translateY(-50%) perspective(1000px) translateZ(-800px) rotateY(60deg) rotateX(-20deg) scale(0.5); 
-    } 
-    40% { 
-        transform: translateY(-50%) perspective(1000px) translateZ(300px) rotateY(0deg) rotateX(10deg) scale(2); 
-    } 
-    100% { 
-        left: 120vw; 
-        transform: translateY(-80%) perspective(1000px) translateZ(-1000px) rotateY(-80deg) rotateX(30deg) scale(0.3); 
-    } 
-}
-
-/* --- 3D MODERN UI CARD UPDATES --- */
-/* Add this to enable 3D space for your grid items */
-.services-grid, .portfolio-grid {
-    perspective: 1200px;
-}
-
-.service-card, .portfolio-item { 
-    /* Remove your old transition so the JS can handle the smooth 3D tracking */
-    transition: box-shadow 0.3s ease, border-color 0.3s ease; 
-    transform-style: preserve-3d;
-    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
-    will-change: transform;
-}
-
-/* Make elements inside the card pop out in 3D space */
-.service-title, .service-badge, .portfolio-item img, .btn-book {
-    transform: translateZ(30px);
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover, .portfolio-item:hover { 
-    border-color: rgba(43, 196, 216, 0.8); 
-    box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 30px rgba(43, 196, 216, 0.2); 
-}
-
-.service-card:hover .service-title {
-    transform: translateZ(50px); /* Text floats higher on hover */
+    0% { left: -20vw; transform: translateY(-50%) perspective(1000px) translateZ(-800px) rotateY(60deg) rotateX(-20deg) scale(0.5); } 
+    40% { transform: translateY(-50%) perspective(1000px) translateZ(300px) rotateY(0deg) rotateX(10deg) scale(2); } 
+    100% { left: 120vw; transform: translateY(-80%) perspective(1000px) translateZ(-1000px) rotateY(-80deg) rotateX(30deg) scale(0.3); } 
 }
 
 /* --- NAVIGATION --- */
@@ -111,7 +74,6 @@ section { padding: 120px 5% 80px; position: relative; }
 .btn-primary:hover { background: var(--accent-glow); color: var(--bg-deep); box-shadow: 0 0 30px rgba(43, 196, 216, 0.6); transform: translateY(-3px); }
 
 /* --- PAGE SPECIFIC --- */
-/* Home */
 #home { height: 100vh; display: flex; align-items: center; padding: 0 5%; margin-top: -80px;}
 .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.4) 100%), url('https://images.unsplash.com/photo-1508614589041-895b88991e3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80') center/cover fixed; z-index: -1; }
 .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
@@ -131,11 +93,47 @@ section { padding: 120px 5% 80px; position: relative; }
 .skill-tag { padding: 8px 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 50px; font-size: 0.9rem; color: var(--text-primary); transition: all 0.3s; }
 .skill-tag:hover { border-color: var(--accent-glow); color: var(--accent-glow); background: rgba(43, 196, 216, 0.1); }
 
-/* Services */
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto; }
-.service-card { padding: 2.5rem 2rem; display: flex; flex-direction: column; transition: var(--transition-slow); position: relative; overflow: hidden; }
-.service-card:hover { transform: translateY(-10px); border-color: rgba(43, 196, 216, 0.5); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-.service-card.highlight { border-color: var(--accent-glow); box-shadow: 0 0 20px rgba(43, 196, 216, 0.15); }
+/* --- 3D MODERN UI CARD UPDATES --- */
+.services-grid, .portfolio-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 2rem; 
+    max-width: 1400px; 
+    margin: 0 auto;
+    perspective: 1200px;
+}
+
+.service-card, .portfolio-item { 
+    padding: 2.5rem 2rem; 
+    display: flex; 
+    flex-direction: column; 
+    position: relative; 
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; 
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+    will-change: transform;
+}
+
+.portfolio-item {
+    padding: 0;
+    height: 550px;
+}
+
+.service-title, .service-badge, .portfolio-item img, .btn-book {
+    transform: translateZ(30px);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover, .portfolio-item:hover { 
+    border-color: rgba(43, 196, 216, 0.8); 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 30px rgba(43, 196, 216, 0.2); 
+}
+
+.service-card:hover .service-title {
+    transform: translateZ(50px);
+}
+
 .service-title { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
 .service-badge { display: inline-block; font-size: 0.75rem; font-weight: 600; color: var(--accent-glow); text-transform: uppercase; margin-bottom: 1.5rem; padding: 4px 10px; background: rgba(43, 196, 216, 0.1); border-radius: 4px; }
 .service-features { list-style: none; flex-grow: 1; margin: 1.5rem 0 2.5rem 0; }
@@ -144,24 +142,10 @@ section { padding: 120px 5% 80px; position: relative; }
 .btn-book { width: 100%; text-align: center; padding: 1rem; border: 1px solid var(--glass-border); border-radius: 8px; background: rgba(255,255,255,0.03); color: var(--text-primary); text-decoration: none; font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; transition: all 0.3s; cursor: pointer; }
 .btn-book:hover { background: var(--accent-glow); color: var(--bg-deep); border-color: var(--accent-glow); }
 
-/* Portfolio */
-.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto; }
-.portfolio-item { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border); background: var(--bg-surface); transition: var(--transition-slow); height: 550px; }
-.portfolio-item:hover { transform: translateY(-10px); border-color: var(--accent-glow); box-shadow: 0 10px 30px rgba(43, 196, 216, 0.15); }
-.portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-.portfolio-item:hover img { transform: scale(1.08); }
+.portfolio-item img { width: 100%; height: 100%; object-fit: cover; }
 .portfolio-item iframe { width: 100%; height: 100%; border: none; background: #fff; }
 
 /* Contact & FAQ */
-.faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto 5rem; }
-.faq-item { border: 1px solid var(--glass-border); border-radius: 8px; padding: 1.5rem; background: rgba(255,255,255,0.02); cursor: pointer; transition: all 0.3s; }
-.faq-item:hover { border-color: rgba(43, 196, 216, 0.3); }
-.faq-question { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
-.faq-question::after { content: '+'; font-size: 1.5rem; color: var(--accent-glow); transition: 0.3s; }
-.faq-item.active .faq-question::after { content: '−'; transform: rotate(180deg); }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; color: var(--text-secondary); font-size: 0.95rem; margin-top: 0; }
-.faq-item.active .faq-answer { max-height: 200px; margin-top: 1rem; }
-
 .contact-container { max-width: 800px; margin: 0 auto; padding: 3rem; text-align: left; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
@@ -182,5 +166,5 @@ footer { border-top: 1px solid var(--glass-border); padding: 3rem 5%; text-align
     .hero-title { font-size: 2.5rem; }
     .social-sidebar { bottom: 20px; top: auto; right: 50%; transform: translateX(50%); flex-direction: row; background: var(--bg-surface); backdrop-filter: blur(10px); padding: 10px 20px; border-radius: 50px; border: 1px solid var(--glass-border); }
     .portfolio-item { height: 450px; }
-    .form-grid, .faq-grid { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
 }
