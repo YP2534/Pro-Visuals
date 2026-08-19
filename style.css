@@ -22,10 +22,65 @@ main { flex-grow: 1; }
 .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* --- DRONE TRANSITION --- */
-#drone-transition { position: fixed; top: 50%; left: -200px; transform: translateY(-50%); z-index: 99999; pointer-events: none; opacity: 0; filter: drop-shadow(0 0 15px var(--accent-glow)); }
-.fly-animation { animation: cinematicFly 1.2s cubic-bezier(0.45, 0, 0.15, 1) forwards; opacity: 1 !important; }
-@keyframes cinematicFly { 0% { left: -200px; transform: translateY(-50%) scale(0.8) rotate(15deg); } 40% { transform: translateY(-70%) scale(1.2) rotate(0deg); } 100% { left: 120vw; transform: translateY(-30%) scale(1) rotate(-10deg); } }
+/* --- 3D DRONE TRANSITION --- */
+#drone-transition { 
+    position: fixed; 
+    top: 50%; 
+    left: -200px; 
+    transform-style: preserve-3d; /* Enables 3D space */
+    z-index: 99999; 
+    pointer-events: none; 
+    opacity: 0; 
+    filter: drop-shadow(0 20px 30px rgba(43, 196, 216, 0.8)); 
+}
+
+.fly-animation { 
+    animation: cinematicFly3D 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; 
+    opacity: 1 !important; 
+}
+
+@keyframes cinematicFly3D { 
+    0% { 
+        left: -20vw; 
+        transform: translateY(-50%) perspective(1000px) translateZ(-800px) rotateY(60deg) rotateX(-20deg) scale(0.5); 
+    } 
+    40% { 
+        transform: translateY(-50%) perspective(1000px) translateZ(300px) rotateY(0deg) rotateX(10deg) scale(2); 
+    } 
+    100% { 
+        left: 120vw; 
+        transform: translateY(-80%) perspective(1000px) translateZ(-1000px) rotateY(-80deg) rotateX(30deg) scale(0.3); 
+    } 
+}
+
+/* --- 3D MODERN UI CARD UPDATES --- */
+/* Add this to enable 3D space for your grid items */
+.services-grid, .portfolio-grid {
+    perspective: 1200px;
+}
+
+.service-card, .portfolio-item { 
+    /* Remove your old transition so the JS can handle the smooth 3D tracking */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; 
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+    will-change: transform;
+}
+
+/* Make elements inside the card pop out in 3D space */
+.service-title, .service-badge, .portfolio-item img, .btn-book {
+    transform: translateZ(30px);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover, .portfolio-item:hover { 
+    border-color: rgba(43, 196, 216, 0.8); 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 30px rgba(43, 196, 216, 0.2); 
+}
+
+.service-card:hover .service-title {
+    transform: translateZ(50px); /* Text floats higher on hover */
+}
 
 /* --- NAVIGATION --- */
 header { position: fixed; width: 100%; top: 0; z-index: 1000; padding: 1.5rem 5%; transition: var(--transition-slow); }
