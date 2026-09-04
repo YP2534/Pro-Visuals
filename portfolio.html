@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Pro Visuals - Featured Projects All Over India</title>
+<link rel="icon" type="image/png" href="ProVisualsLogo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script>tailwind.config={theme:{extend:{colors:{ink:'#111111',paper:'#FFFEFB',orange:'#FF4D12',charcoal:'#0F1115',beige:'#F5F2ED',gold:'#D4AF37',line:'#EBE7E1'}}}}</script>
+<style>
+*{scroll-behavior:smooth}
+body{background:#FFFEFB;color:#111;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden; cursor:none}
+a,button{cursor:none!important}
+.hero-title{font-family:'Syne',sans-serif;font-weight:800;line-height:.85}
+.orange-3d{color:#FF4D12;text-shadow:3px 3px 0px #111, 8px 8px 30px rgba(255,77,18,.25)}
+.floating-quote{position:fixed;right:22px;bottom:22px;z-index:999;background:#FF4D12;color:#fff;padding:14px 22px;border-radius:100px;font-size:12px;font-weight:800;letter-spacing:0.15em;box-shadow:0 12px 30px rgba(255,77,18,.4);display:flex;align-items:center;gap:10px;animation:floatPulse 2.2s infinite}
+@keyframes floatPulse{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.custom-arrow-cursor{position:fixed;top:0;left:0;width:26px;height:28px;pointer-events:none;z-index:99999;transform:translate(-2px,-2px);filter:drop-shadow(2.5px 3.5px 0px #111) drop-shadow(0 2px 5px rgba(0,0,0,.6));transition:transform.12s ease}
+.custom-arrow-cursor.hover{transform:translate(-2px,-2px) scale(1.25)}
+.custom-arrow-cursor.click{transform:translate(-2px,-2px) scale(0.85)}
+.portfolio-card{transition:all.4s cubic-bezier(.23,1,.32,1)}
+.portfolio-card:hover{transform:translateY(-6px)}
+.portfolio-card:hover img{transform:scale(1.08)}
+.filter-btn.active{background:#FF4D12;color:#fff;border-color:#FF4D12}
+@media(max-width:1024px){.custom-arrow-cursor{display:none} body,a,button{cursor:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="custom-arrow-cursor" id="customArrow">
+<svg viewBox="0 0 32 32"><path d="M2.2 1.8 C1.8 0.9 2.6 0 3.6 0.2 L27.8 10.8 C30 11.7 30 14.8 27.8 15.7 L18.8 19.6 C18 20 17.5 20.8 17.3 21.7 L13.8 29.2 C13 31.3 10 31.4 9.2 29.2 L2.2 1.8 Z" fill="#FF9C00"/></svg>
+</div>
+
+<a href="contact.html" class="floating-quote"><i class="fa-solid fa-paper-plane"></i> GET A QUOTE</a>
+
+<nav class="absolute top-0 w-full z-50 px-6 md:px-12 py-4 flex justify-between items-center bg-ink">
+  <div class="flex items-center gap-3 text-white"><img src="ProVisualsLogo.png" class="w-11 h-11 rounded-full object-cover border border-white/30 bg-white p-1"><div><p class="font-bold tracking-[0.2em] text-sm">PRO VISUALS</p><p class="text-[7px] tracking-[0.3em] opacity-70">ALL OVER INDIA</p></div></div>
+  <div class="hidden lg:flex gap-8 text-[11px] tracking-widest text-white/70 font-bold">
+    <a href="index.html">HOME</a>
+    <a href="services.html">SERVICES</a>
+    <a href="portfolio.html" class="text-white border-b border-orange pb-1">PORTFOLIO</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+  <a href="https://wa.me/917709444575" class="hidden md:block border border-orange text-orange text-[11px] tracking-widest px-6 py-2.5 rounded-full hover:bg-orange hover:text-white transition">BOOK ON WHATSAPP →</a>
+</nav>
+
+<section class="bg-ink pt-32 pb-16 px-6 md:px-12 relative overflow-hidden">
+<div class="absolute top-20 right-20 w-[600px] h-[600px] bg-orange/15 blur-[140px] rounded-full"></div>
+<div class="relative z-10 max-w-[1400px] mx-auto text-center">
+<p class="text-orange text-[11px] font-bold tracking-[0.4em]">SELECTED WORKS 2025-2026</p>
+<h1 class="hero-title text-white text-[12vw] md:text-[6.5vw] mt-3"><span class="text-orange italic">Featured</span> <span class="text-white">Projects</span></h1>
+<p class="text-white/50 text-[13px] max-w-[600px] mx-auto mt-4">Our best drone, web, app & video editing works — All Over India</p>
+<div class="flex flex-wrap justify-center gap-2 mt-10">
+<button class="filter-btn active border border-white/20 text-white text-[10px] font-bold tracking-widest px-5 py-2.5 rounded-full hover:bg-white hover:text-black transition" data-filter="all">ALL PROJECTS</button>
+<button class="filter-btn border border-white/20 text-white/60 text-[10px] font-bold tracking-widest px-5 py-2.5 rounded-full hover:bg-white hover:text-black transition" data-filter="drone">DRONE</button>
+<button class="filter-btn border border-white/20 text-white/60 text-[10px] font-bold tracking-widest px-5 py-2.5 rounded-full hover:bg-white hover:text-black transition" data-filter="realestate">REAL ESTATE</button>
+<button class="filter-btn border border-white/20 text-white/60 text-[10px] font-bold tracking-widest px-5 py-2.5 rounded-full hover:bg-white hover:text-black transition" data-filter="wedding">WEDDING</button>
+<button class="filter-btn border border-white/20 text-white/60 text-[10px] font-bold tracking-widest px-5 py-2.5 rounded-full hover:bg-white hover:text-black transition" data-filter="web">WEB DEV</button>
+<button class="filter-btn border border-white/20 text-white/60 text-[10px] font-bold tracking-widest px-5 py-2.5 rounded-full hover:bg-white hover:text-black transition" data-filter="app">APP DEV</button>
+<button class="filter-btn border border-white/20 text-white/60 text-[10px] font-bold tracking-widest px-5 py-2.5 rounded-full hover:bg-white hover:text-black transition" data-filter="video">VIDEO EDIT</button>
+</div>
+</div>
+</section>
+
+<section class="py-12 px-6 md:px-10 bg-[#0E0D0B]">
+<div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioGrid">
+
+<div class="portfolio-card group rounded-[22px] overflow-hidden border border-white/10 bg-[#1A1917]" data-cat="wedding">
+<div class="relative overflow-hidden h-[260px]"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700"><div class="absolute top-4 left-4 bg-white text-black text-[9px] font-bold tracking-widest px-3 py-1.5 rounded-full">WEDDING • DRONE</div></div>
+<div class="p-5"><div class="flex justify-between items-start"><div><p class="text-white font-bold text-[16px]">Wedding</p><p class="text-white/40 text-[11px] mt-1">Wedding Shoot  • Pune</p></div><div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-orange transition"><i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i></div></div></div>
+</div>
+
+<div class="portfolio-card group rounded-[22px] overflow-hidden border border-white/10 bg-[#1A1917]" data-cat="wedding drone">
+<div class="relative overflow-hidden h-[260px]"><img src="https://images.unsplash.com/photo-1649701691519-d2714c4daded?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-full object-cover transition duration-700"><div class="absolute top-4 left-4 bg-orange text-white text-[9px] font-bold tracking-widest px-3 py-1.5 rounded-full">PRE-WEDDING • FPV</div></div>
+<div class="p-5"><p class="text-white font-bold text-[16px]">Pre-Wedding - Lavasa Lake</p><p class="text-white/40 text-[11px] mt-1">Pre-Wedding • FPV Drone • Lavasa</p></div>
+</div>
+
+<div class="portfolio-card group rounded-[22px] overflow-hidden border border-white/10 bg-[#1A1917]" data-cat="web">
+<div class="relative overflow-hidden h-[260px]"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700"><div class="absolute top-4 left-4 bg-[#FFFEFB] text-black text-[9px] font-bold tracking-widest px-3 py-1.5 rounded-full">WEB • E-COMMERCE</div></div>
+<div class="p-5"><p class="text-white font-bold text-[16px]">E-Commerce</p><p class="text-white/40 text-[11px] mt-1">Web Development</p></div>
+</div>
+
+<div class="portfolio-card group rounded-[22px] overflow-hidden border border-white/10 bg-[#1A1917]" data-cat="app">
+<div class="relative overflow-hidden h-[260px]"><img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700"><div class="absolute top-4 left-4 bg-orange text-white text-[9px] font-bold tracking-widest px-3 py-1.5 rounded-full">APP</div></div>
+<div class="p-5"><p class="text-white font-bold text-[16px]">Bakery Brought - Food Delivery App</p><p class="text-white/40 text-[11px] mt-1">App Development • iOS & Android</p></div>
+</div>
+
+<div class="portfolio-card group rounded-[22px] overflow-hidden border border-white/10 bg-[#1A1917]" data-cat="video">
+<div class="relative overflow-hidden h-[260px]"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700"><div class="absolute inset-0 flex items-center justify-center"><div class="w-14 h-14 rounded-full bg-white/20 backdrop-blur border border-white/30 flex items-center justify-center text-white"><i class="fa-solid fa-play ml-0.5"></i></div></div><div class="absolute top-4 left-4 bg-white text-black text-[9px] font-bold tracking-widest px-3 py-1.5 rounded-full">VIDEO • REEL</div></div>
+<div class="p-5"><p class="text-white font-bold text-[16px]">Corporate Showreel</p><p class="text-white/40 text-[11px] mt-1">Video Editing • 4K • Color Grading</p></div>
+</div>
+
+<div class="portfolio-card group rounded-[22px] overflow-hidden border border-white/10 bg-[#1A1917]" data-cat="realestate drone">
+<div class="relative overflow-hidden h-[260px]"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700"><div class="absolute top-4 left-4 bg-gold text-black text-[9px] font-bold tracking-widest px-3 py-1.5 rounded-full">REAL ESTATE • 4K</div></div>
+<div class="p-5"><p class="text-white font-bold text-[16px]">Skyline Towers - Kharadi</p><p class="text-white/40 text-[11px] mt-1">Real Estate • 25 Floors • Pune</p></div>
+</div>
+
+<div class="portfolio-card group rounded-[22px] overflow-hidden border border-white/10 bg-[#1A1917]" data-cat="app web">
+<div class="relative overflow-hidden h-[260px]"><img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700"><div class="absolute top-4 left-4 bg-white text-black text-[9px] font-bold tracking-widest px-3 py-1.5 rounded-full">FULL STACK</div></div>
+<div class="p-5"><p class="text-white font-bold text-[16px]">Pro Visuals CRM + Website</p><p class="text-white/40 text-[11px] mt-1">Web + App • Booking System • 2026</p></div>
+</div>
+
+</div>
+
+<div class="text-center mt-16">
+<p class="text-white/30 text-[11px] tracking-[0.3em]">SHOWING 9 OF 127 PROJECTS</p>
+<button class="mt-6 border border-white/20 text-white text-[11px] tracking-widest px-8 py-3 rounded-full hover:bg-white hover:text-black transition">LOAD MORE PROJECTS →</button>
+</div>
+
+</section>
+
+<!-- FOOTER LIKE INDEX.HTML -->
+<footer id="contact" class="bg-ink text-white/70 py-12 px-6 md:px-12">
+  <div class="grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-3"><div class="flex items-center gap-3 text-white mb-4"><img src="ProVisualsLogo.png" class="w-12 h-12 rounded-full object-cover border border-white/20 bg-white p-0.5"><div><p class="font-bold tracking-[0.2em] text-sm leading-none">PRO VISUALS</p><p class="text-[7px] tracking-[0.3em] opacity-70">DRONE • WEB • APP • PUNE</p></div></div><p class="text-[11px] leading-relaxed">Capturing moments from new heights. Professional drone & digital services All Over India.</p></div>
+    <div class="md:col-span-2"><p class="text-orange text-[11px] font-bold tracking-widest mb-4">QUICK LINKS</p><ul class="text-[12px] space-y-2.5"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="md:col-span-3"><p class="text-orange text-[11px] font-bold tracking-widest mb-4">SERVICES</p><ul class="text-[11px] space-y-2 opacity-80"><li><a href="services.html">> Aerial Survey — PREMIUM</a></li><li><a href="services.html">> Real Estate — MOST AFFORDABLE</a></li><li><a href="services.html">> Pre Wedding — HOT SELLING</a></li><li><a href="services.html">> Wedding Shoot — GET MOST OF IT</a></li><li><a href="services.html">> Live Stream & Podcast</a></li><li><a href="services.html">> Web Development</a></li><li><a href="services.html">> App Development — NEW</a></li><li><a href="services.html">> Video Editing</a></li></ul></div>
+    <div class="md:col-span-4"><p class="text-orange text-[11px] font-bold tracking-widest mb-4">CONTACT US</p><p class="text-[12px] mb-2"><i class="fa-solid fa-phone mr-2 text-orange"></i> +91 7709 444 575</p><p class="text-[12px] mb-2"><i class="fa-solid fa-envelope mr-2 text-orange"></i> provisuals7@gmail.com</p><p class="text-[12px] mb-5"><i class="fa-solid fa-location-dot mr-2 text-orange"></i> All Over India</p><a href="contact.html" class="border border-orange text-orange text-[11px] tracking-widest px-6 py-3 rounded-full hover:bg-orange hover:text-white transition inline-block">GET A QUOTE →</a></div>
+  </div>
+  <div class="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-[10px] opacity-40 tracking-widest">© 2026 Pro Visuals. All Rights Reserved.</p>
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/917709444575" target="_blank" class="w-9 h-9 rounded-full bg-[#25D366] flex items-center justify-center text-white hover:scale-110 transition"><i class="fa-brands fa-whatsapp text-[18px]"></i></a>
+      <a href="https://www.instagram.com/provisuals7/" target="_blank" class="w-9 h-9 rounded-full flex items-center justify-center text-white hover:scale-110 transition" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);"><i class="fa-brands fa-instagram text-[18px]"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61590798230067" target="_blank" class="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:scale-110 transition"><i class="fa-brands fa-facebook-f text-[16px]"></i></a>
+      <a href="mailto:provisuals7@gmail.com" class="w-9 h-9 rounded-full bg-[#EA4335] flex items-center justify-center text-white hover:scale-110 transition"><i class="fa-solid fa-envelope text-[14px]"></i></a>
+    </div>
+    <div class="flex items-center gap-2 text-[10px] opacity-40 tracking-widest"><img src="ProVisualsLogo.png" class="w-6 h-6 rounded-full object-cover opacity-60 bg-white p-0.5"><p>MADE WITH ♥ IN INDIA • @PROVISUALS7</p></div>
+  </div>
+</footer>
+
+<script>
+const cur=document.getElementById('customArrow'); let mx=0,my=0,cx=0,cy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX; my=e.clientY});
+(function loop(){cx+=(mx-cx)*0.25; cy+=(my-cy)*0.25; cur.style.left=cx+'px'; cur.style.top=cy+'px'; requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button,.portfolio-card').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('hover')); el.addEventListener('mouseleave',()=>cur.classList.remove('hover'))});
+document.addEventListener('mousedown',()=>cur.classList.add('click')); document.addEventListener('mouseup',()=>cur.classList.remove('click'));
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+btn.addEventListener('click',()=>{
+document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+const f=btn.dataset.filter;
+document.querySelectorAll('.portfolio-card').forEach(card=>{
+if(f==='all' || card.dataset.cat.includes(f)){card.style.display='block'; setTimeout(()=>card.style.opacity='1',50)}
+else{card.style.display='none'}
+});
+});
+});
+</script>
+</body>
+</html>
